@@ -1,12 +1,67 @@
 <!DOCTYPE html>
-
 <html>
     <head>
-        <title>CS 313</title>
-        <meta charset="windows-1252">
+        <title>CS 313: John Vehikite's Homepage</title>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        
     </head>
     <body>
-        <h1>Hello World</h1>
+        <header id="title">
+            <h1>CS 313: John Vehikite's Homepage</h1>
+        </header>
+        <p id="mainImg">
+            <img src="./jv_temple.jpg" alt="John Vehikite at the Oakland Temple."
+                 onmouseover="this.src='./vehikite_fam.jpg'"
+                 onmouseout="this.src='./jv_temple.jpg'"></p>
+        
+        <div class="container">
+            <div class="padder">
+                <section>
+                    <h2>About John</h2>
+                    <p>Hello everybody! My name is John Vehikite, and I was born, raised, 
+                        and I currently reside in the Bay Area, CA. I have been married for 
+                        eight years (my wife and I were sealed in the Oakland Temple), and 
+                        we have two beautiful girls, Zuleyka (6) and Zamira (3). 
+                        If you mouse over the picture above, you will see a picture of the
+                        lovely ladies in my life!</p>
+                    
+                    <h3>For more information about John, click the button below:</h3>
+                    
+                    <button type="button" onclick="showMoreInfo()">Show More Info</button>
+                    
+                    <p id="moreInfo">
+                        I am a former BYU-Idaho Pathway student. I am so grateful for that 
+                        inspired program! It has allowed me to come back to school after stopping 
+                        college more than 10 years ago. I am taking this class because it is a 
+                        graduation requirement, but I am excited to improve my PHP skills and to
+                        learn additional web technologies.<br><br>My major is Software Engineering, and 
+                        I hope to one day work for Google or some other nice software company 
+                        (hey, I can dream, right?).<br><br>I work full-time at the financial aid office 
+                        at a local community college, and I am also a part-time 
+                        <a href="http://johnv.zumba.com">Zumba Instructor</a>. 
+                        I will be celebrating my fifth anniversary as a Zumba Instructor this year!
+                    </p>
+                    
+                </section>
+            </div>
+
+            <div class="padder">
+                <section id="link">
+                    <a class="bottom-link" href="./assignments.html">Click here to go to John
+                    Vehikite's CS 313 Assignments Page</a>
+                </section>
+            </div>
+        </div>
+        <div class="padder">
+            <footer>
+                <p>
+                <span id="copyright">&COPY;JdaVet Web Designs | </span>
+                <a href="index.html">Home</a> |
+                <a id="assignments" href="assignments.html">CS 313 Assignments</a></p>
+            </footer>
+        </div>
+        <script type="text/javascript" src="javascript.js"></script>
     </body>
 </html>
