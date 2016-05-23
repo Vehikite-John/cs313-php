@@ -43,7 +43,7 @@ $db = loadDatabase();
 
             <div class="padder">
                 <section id="link">
-                    <a class="bottom-link" href="./assignments.html">Click here to go to John
+                    <a class="bottom-link" href="../assignments.html">Click here to go to John
                     Vehikite's CS 313 Assignments Page</a>
                 </section>
             </div>
@@ -52,9 +52,9 @@ $db = loadDatabase();
             <footer>
                 <p>
                 <span id="copyright">&COPY;JdaVet Web Designs | </span>
-                <a href="index.html">Home</a> |
-                <a id="assignments" href="assignments.html">CS 313 Assignments</a></p>
+                <a href="../index.html">Home</a> |
+                <a id="assignments" href="../assignments.html">CS 313 Assignments</a></p>
             </footer>
         </div>
-        <script type="text/javascript" src="javascript.js"></script>
+        <script type="text/javascript" src="../javascript.js"></script>
     </body>
