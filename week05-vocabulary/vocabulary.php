@@ -3,8 +3,12 @@ try
 {
 require("dbConnector.php"); 
 
+
+
 $db = loadDatabase();
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+if (!empty($_POST['spanish']))
+{
 $spanish = $_POST['spanish'];
 $english = $_POST['english'];
 $image = $_POST['image'];
@@ -18,26 +22,15 @@ $category = $_POST['category'];
 $newVocab = "INSERT INTO vocabulary (spanish, english, image)
     VALUES ('$spanish', '$english', '$image');";
 
-//$v_id = mysql_query("SELECT id FROM vocabulary WHERE spanish = '$spanish'");
-//if (!$v_id) {
-//    echo 'Could not run query: ' . mysql_error();
-//    exit;
-//}
-//$vocab = mysql_fetch_row($v_id);
-//
-//$c_id = mysql_query("SELECT id FROM categories WHERE category = '$category'");
-//if (!$c_id) {
-//    echo 'Could not run query: ' . mysql_error();
-//    exit;
-//}
-//$cat = mysql_fetch_row($c_id);
-//
-//$newVC = "INSERT INTO vocabulary_categories VALUES ('$vocab','$cat')";
+$newVC = "INSERT INTO vocabulary_categories
+    VALUES
+    ((SELECT id FROM vocabulary WHERE spanish = '$spanish'),
+    (SELECT id FROM categories WHERE category = '$category'))";
 
 
 $db->query($newVocab);
-//$db->query($v_id);
-//$db->query($newVC);
+$db->query($newVC);
+}
 
 } catch (Exception $ex) {
     echo 'Error!: ' . $ex->getMessage();
@@ -67,6 +60,10 @@ $db->query($newVocab);
         <div class="container">
             <div class="padder">
                 <section>
+                    <p><a href="../index.html">Home</a> > 
+                        <a href="../assigments.html">Assignments</a> >
+                        <a href="vocabulary-form.php/">Add Vocabulary</a> >
+                        <a href="vocabulary.php">Vocabulary List</a></p>
                     <h2>Spanish Vocabulary List</h2>
                     <p>
                         <?php
@@ -82,8 +79,7 @@ $db->query($newVocab);
 
             <div class="padder">
                 <section id="link">
-                    <a class="bottom-link" href="../assignments.html">Click here to go to John
-                    Vehikite's CS 313 Assignments Page</a>
+                    <a class="bottom-link" href="vocabulary-form.php">Click here to add a word to the vocabulary list.</a>
                 </section>
             </div>
         </div>

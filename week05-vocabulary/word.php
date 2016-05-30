@@ -11,107 +11,8 @@ $sql = "SELECT v.spanish, v.english, v.image, c.category FROM vocabulary v
     ON v.id = vc.v_id
     INNER JOIN categories c
     ON vc.c_id = c.id
-    WHERE v.id = $id;";
-//$sql = "SELECT ew.english_word, i.image, spanish_word FROM spanish_words sw
-//        INNER JOIN english_words ew
-//        ON sw.spanish_id = ew.spanish_id
-//        INNER JOIN images i
-//        ON sw.spanish_id = i.spanish_id
-//        WHERE sw.spanish_id = '$id';";
-//$sql = '';
-    
-//    if ($_GET['id'] == 1)
-//        // TODO: USE FUNCTION TO REDUCE REDUNDANT CODE
-//        $sql = 'SELECT ew.english_word, i.image, spanish_word FROM spanish_words sw
-//            INNER JOIN spanish_english_image sei
-//            ON sw.spanish_id = sei.spanish_id
-//            INNER JOIN english_words ew
-//            ON sei.english_id = ew.english_id
-//            INNER JOIN images i
-//            ON sei.image_id = i.image_id
-//            WHERE sw.spanish_id = 1;';
-//    elseif ($_GET['id'] == 2)
-//        $sql = 'SELECT ew.english_word, i.image, spanish_word FROM spanish_words sw
-//            INNER JOIN spanish_english_image sei
-//            ON sw.spanish_id = sei.spanish_id
-//            INNER JOIN english_words ew
-//            ON sei.english_id = ew.english_id
-//            INNER JOIN images i
-//            ON sei.image_id = i.image_id
-//            WHERE sw.spanish_id = 2;';
-//    elseif ($_GET['id'] == 3)
-//        $sql = 'SELECT ew.english_word, i.image, spanish_word FROM spanish_words sw
-//            INNER JOIN spanish_english_image sei
-//            ON sw.spanish_id = sei.spanish_id
-//            INNER JOIN english_words ew
-//            ON sei.english_id = ew.english_id
-//            INNER JOIN images i
-//            ON sei.image_id = i.image_id
-//            WHERE sw.spanish_id = 3;';
-//    elseif ($_GET['id'] == 4)
-//        $sql = 'SELECT ew.english_word, i.image, spanish_word FROM spanish_words sw
-//            INNER JOIN spanish_english_image sei
-//            ON sw.spanish_id = sei.spanish_id
-//            INNER JOIN english_words ew
-//            ON sei.english_id = ew.english_id
-//            INNER JOIN images i
-//            ON sei.image_id = i.image_id
-//            WHERE sw.spanish_id = 4;';
-//    elseif ($_GET['id'] == 5)
-//        $sql = 'SELECT ew.english_word, i.image, spanish_word FROM spanish_words sw
-//            INNER JOIN spanish_english_image sei
-//            ON sw.spanish_id = sei.spanish_id
-//            INNER JOIN english_words ew
-//            ON sei.english_id = ew.english_id
-//            INNER JOIN images i
-//            ON sei.image_id = i.image_id
-//            WHERE sw.spanish_id = 5;';
-//    elseif ($_GET['id'] == 6)
-//        $sql = 'SELECT ew.english_word, i.image, spanish_word FROM spanish_words sw
-//            INNER JOIN spanish_english_image sei
-//            ON sw.spanish_id = sei.spanish_id
-//            INNER JOIN english_words ew
-//            ON sei.english_id = ew.english_id
-//            INNER JOIN images i
-//            ON sei.image_id = i.image_id
-//            WHERE sw.spanish_id = 6;';
-//    elseif ($_GET['id'] == 7)
-//        $sql = 'SELECT ew.english_word, i.image, spanish_word FROM spanish_words sw
-//            INNER JOIN spanish_english_image sei
-//            ON sw.spanish_id = sei.spanish_id
-//            INNER JOIN english_words ew
-//            ON sei.english_id = ew.english_id
-//            INNER JOIN images i
-//            ON sei.image_id = i.image_id
-//            WHERE sw.spanish_id = 7;';
-//    elseif ($_GET['id'] == 8)
-//        $sql = 'SELECT ew.english_word, i.image, spanish_word FROM spanish_words sw
-//            INNER JOIN spanish_english_image sei
-//            ON sw.spanish_id = sei.spanish_id
-//            INNER JOIN english_words ew
-//            ON sei.english_id = ew.english_id
-//            INNER JOIN images i
-//            ON sei.image_id = i.image_id
-//            WHERE sw.spanish_id = 8;';
-//    elseif ($_GET['id'] == 9)
-//        $sql = 'SELECT ew.english_word, i.image, spanish_word FROM spanish_words sw
-//            INNER JOIN spanish_english_image sei
-//            ON sw.spanish_id = sei.spanish_id
-//            INNER JOIN english_words ew
-//            ON sei.english_id = ew.english_id
-//            INNER JOIN images i
-//            ON sei.image_id = i.image_id
-//            WHERE sw.spanish_id = 9;';
-//    elseif ($_GET['id'] == 10)
-//        $sql = 'SELECT ew.english_word, i.image, spanish_word FROM spanish_words sw
-//            INNER JOIN spanish_english_image sei
-//            ON sw.spanish_id = sei.spanish_id
-//            INNER JOIN english_words ew
-//            ON sei.english_id = ew.english_id
-//            INNER JOIN images i
-//            ON sei.image_id = i.image_id
-//            WHERE sw.spanish_id = 10;';
-        
+    WHERE v.id = '$id'";
+ 
 } catch (Exception $ex) {
     echo 'Error!: ' . $ex->getMessage();
     die();
@@ -136,10 +37,14 @@ $sql = "SELECT v.spanish, v.english, v.image, c.category FROM vocabulary v
         <div class="container">
             <div class="padder">
                 <section>
+                    <p><a href="../index.html">Home</a> > 
+                        <a href="../assigments.html">Assignments</a>
+                        <a href="vocabulary-form.php/">Add Vocabulary</a>
+                        <a href="vocabulary.php">Vocabulary List</a></p>
                     <?php 
                     foreach ($db->query($sql) as $row) {
                         echo '<h2>' . ucfirst($row['spanish']) . '</h2>';
-                        echo '<p><img src="../images/' . $row['image'] . '"></p>';
+                        echo '<p><img src="' . $row['image'] . '"></p>';
                         echo '<h3>' . ucfirst($row['english']) . '</h3>';
                         echo '<p><strong>Category: ' . ucfirst($row['category']) . '</strong></p>';
                     //echo $_GET['id'];
@@ -148,7 +53,12 @@ $sql = "SELECT v.spanish, v.english, v.image, c.category FROM vocabulary v
                     
                 </section>
             </div>
-
+            <div class="padder">
+                <section id="link">
+                    <a class="bottom-link" href="vocabulary-form.php">Click here to add a word to the vocabulary list!</a>
+                </section>
+            </div>
+            
             <div class="padder">
                 <section id="link">
                     <a class="bottom-link" href="vocabulary.php">Click here to go back to the Vocabulary page.</a>

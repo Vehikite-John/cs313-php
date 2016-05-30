@@ -40,7 +40,7 @@ $db = loadDatabase();
                 <section>
                     <p><a href="../index.html">Home</a> > 
                         <a href="../assignments.html">Assignments</a> >
-                        <a href="scripture-form.php">Survey</a></p>
+                        <a href="vocabulary-form.php">Add Vocabulary</a></p>
                     <h2>Add Vocabulary to the Crestmont Spanish Database!</h2>
                     
                     <form action="vocabulary.php" id="vocabulary" method="post">
