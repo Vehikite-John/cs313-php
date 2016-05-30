@@ -38,8 +38,8 @@ $sql = "SELECT v.spanish, v.english, v.image, c.category FROM vocabulary v
             <div class="padder">
                 <section>
                     <p><a href="../index.html">Home</a> > 
-                        <a href="../assigments.html">Assignments</a>
-                        <a href="vocabulary-form.php/">Add Vocabulary</a>
+                        <a href="../assignments.html">Assignments</a> >
+                        <a href="vocabulary-form.php/">Add Vocabulary</a> >
                         <a href="vocabulary.php">Vocabulary List</a></p>
                     <?php 
                     foreach ($db->query($sql) as $row) {
@@ -55,13 +55,13 @@ $sql = "SELECT v.spanish, v.english, v.image, c.category FROM vocabulary v
             </div>
             <div class="padder">
                 <section id="link">
-                    <a class="bottom-link" href="vocabulary-form.php">Click here to add a word to the vocabulary list!</a>
+                    <a class="bottom-link" href="vocabulary-form.php">Click here to add a word to the vocabulary list.</a>
                 </section>
             </div>
             
             <div class="padder">
                 <section id="link">
-                    <a class="bottom-link" href="vocabulary.php">Click here to go back to the Vocabulary page.</a>
+                    <a class="bottom-link" href="vocabulary.php">Click here to go back to the vocabulary page.</a>
                 </section>
             </div>
         </div>

@@ -61,8 +61,8 @@ $db->query($newVC);
             <div class="padder">
                 <section>
                     <p><a href="../index.html">Home</a> > 
-                        <a href="../assigments.html">Assignments</a> >
-                        <a href="vocabulary-form.php/">Add Vocabulary</a> >
+                        <a href="../assignments.html">Assignments</a> >
+                        <a href="vocabulary-form.php">Add Vocabulary</a> >
                         <a href="vocabulary.php">Vocabulary List</a></p>
                     <h2>Spanish Vocabulary List</h2>
                     <p>

@@ -70,8 +70,7 @@ $db = loadDatabase();
 
             <div class="padder">
                 <section id="link">
-                    <a class="bottom-link" href="../assignments.html">Click here to go to John
-                    Vehikite's Assignment Page</a>
+                    <a class="bottom-link" href="vocabulary.php">Click here to see the vocabulary list.</a>
                 </section>
             </div>
         </div>
