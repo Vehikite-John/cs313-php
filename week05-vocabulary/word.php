@@ -39,7 +39,7 @@ $sql = "SELECT v.spanish, v.english, v.image, c.category FROM vocabulary v
                 <section>
                     <p><a href="../index.html">Home</a> > 
                         <a href="../assignments.html">Assignments</a> >
-                        <a href="vocabulary-form.php/">Add Vocabulary</a> >
+                        <a href="vocabulary-form.php">Add Vocabulary</a> >
                         <a href="vocabulary.php">Vocabulary List</a></p>
                     <?php 
                     foreach ($db->query($sql) as $row) {
