@@ -3,11 +3,50 @@ try
 {
 require("dbConnector.php"); 
 
-$db = loadDatabase(); 
+$db = loadDatabase();
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$spanish = $_POST['spanish'];
+$english = $_POST['english'];
+$image = $_POST['image'];
+$category = $_POST['category'];
+
+//$spanish = mysqli_real_escape_string($db, $_POST['spanish']);
+//$english = mysqli_real_escape_string($db, $_POST['english']);
+//$image = mysqli_real_escape_string($db, $_POST['image']);
+//$category = mysqli_real_escape_string($db, $_POST['category']);
+
+$newVocab = "INSERT INTO vocabulary (spanish, english, image)
+    VALUES ('$spanish', '$english', '$image');";
+
+//$v_id = mysql_query("SELECT id FROM vocabulary WHERE spanish = '$spanish'");
+//if (!$v_id) {
+//    echo 'Could not run query: ' . mysql_error();
+//    exit;
+//}
+//$vocab = mysql_fetch_row($v_id);
+//
+//$c_id = mysql_query("SELECT id FROM categories WHERE category = '$category'");
+//if (!$c_id) {
+//    echo 'Could not run query: ' . mysql_error();
+//    exit;
+//}
+//$cat = mysql_fetch_row($c_id);
+//
+//$newVC = "INSERT INTO vocabulary_categories VALUES ('$vocab','$cat')";
+
+
+$db->query($newVocab);
+//$db->query($v_id);
+//$db->query($newVC);
+
 } catch (Exception $ex) {
     echo 'Error!: ' . $ex->getMessage();
     die();
 }
+
+//$db = loadDatabase(); 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -31,9 +70,9 @@ $db = loadDatabase();
                     <h2>Spanish Vocabulary List</h2>
                     <p>
                         <?php
-                        foreach ($db->query('SELECT spanish_word, spanish_id FROM spanish_words') as $row)
+                        foreach ($db->query('SELECT spanish, id FROM vocabulary') as $row)
                         {
-                            echo '<a href="./word.php?id=' . $row['spanish_id'] . '">' . ucfirst($row['spanish_word']) . '</a><br><br>';
+                            echo '<a href="./word.php?id=' . $row['id'] . '">' . ucfirst($row['spanish']) . '</a><br><br>';
                         }
                         ?>
                     </p>

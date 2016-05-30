@@ -7,7 +7,7 @@ function loadDatabase()
   $dbUser = "";
   $dbPassword = "";
 
-     $dbName = "crestmont_spanish";
+     $dbName = "scriptures";
 
      $openShiftVar = getenv('OPENSHIFT_MYSQL_DB_HOST');
 
