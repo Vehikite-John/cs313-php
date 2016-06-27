@@ -126,3 +126,7 @@ a.bottom-link {
     text-decoration: underline;
     font-size: 15px;
 }
+
+#vocab img {
+    height: 25%;
+}

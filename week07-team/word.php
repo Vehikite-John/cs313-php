@@ -37,17 +37,13 @@ $sql = "SELECT v.spanish, v.english, v.image, c.category FROM vocabulary v
         <div class="container">
             <div class="padder">
                 <section>
-                    <p><a href="vocabulary.php">Home</a> > 
-                            <?php 
-                    foreach ($db->query($sql) as $row) {
-                        echo ucfirst($row['spanish']);
-                    }
-                    ?>
-                    </p>
+                    <p><a href="../index.html">Home</a> > 
+                        <a href="../assignments.html">Assignments</a> >
+                        <a href="vocabulary-form.php">Add Vocabulary</a> >
+                        <a href="vocabulary.php">Vocabulary List</a></p>
                     <?php 
                     foreach ($db->query($sql) as $row) {
                         echo '<h2>' . ucfirst($row['spanish']) . '</h2>';
-                        echo '<audio src="../audio/' . $row['spanish'] . '.mp3" controls> </audio>';
                         echo '<p><img src="' . $row['image'] . '"></p>';
                         echo '<h3>' . ucfirst($row['english']) . '</h3>';
                         echo '<p><strong>Category: ' . ucfirst($row['category']) . '</strong></p>';
@@ -57,11 +53,11 @@ $sql = "SELECT v.spanish, v.english, v.image, c.category FROM vocabulary v
                     
                 </section>
             </div>
-<!--            <div class="padder">
+            <div class="padder">
                 <section id="link">
                     <a class="bottom-link" href="vocabulary-form.php">Click here to add a word to the vocabulary list.</a>
                 </section>
-            </div>-->
+            </div>
             
             <div class="padder">
                 <section id="link">
@@ -73,8 +69,8 @@ $sql = "SELECT v.spanish, v.english, v.image, c.category FROM vocabulary v
             <footer>
                 <p>
                 <span id="copyright">&COPY;JdaVet Web Designs | </span>
-<!--                <a href="../index.html">Home</a> |
-                <a id="assignments" href="../assignments.html">CS 313 Assignments</a></p>-->
+                <a href="../index.html">Home</a> |
+                <a id="assignments" href="../assignments.html">CS 313 Assignments</a></p>
             </footer>
         </div>
         <script type="text/javascript" src="../javascript.js"></script>

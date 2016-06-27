@@ -60,18 +60,16 @@ $db->query($newVC);
         <div class="container">
             <div class="padder">
                 <section>
-<!--                    <p><a href="../index.html">Home</a> > 
-                        <a href="../assignments.html">Assignments</a> >-->
-<!--                        <a href="vocabulary-form.php">Add Vocabulary</a> >-->
-                        <a href="vocabulary.php">Home</a></p>
-                    <h2 style="text-align: center">Spanish Vocabulary List</h2>
-                    <h3 style="text-align: center">Choose a word for more information</h3>
+                    <p><a href="../index.html">Home</a> > 
+                        <a href="../assignments.html">Assignments</a> >
+                        <a href="vocabulary-form.php">Add Vocabulary</a> >
+                        <a href="vocabulary.php">Vocabulary List</a></p>
+                    <h2>Spanish Vocabulary List</h2>
                     <p>
                         <?php
-                        foreach ($db->query('SELECT spanish, id, image FROM vocabulary') as $row)
+                        foreach ($db->query('SELECT spanish, id FROM vocabulary') as $row)
                         {
-                            echo '<h3 id="vocab" style="text-align: center"><a href="./word.php?id=' . $row['id'] . '">' . ucfirst($row['spanish']) . '</h3>';
-                            echo '<center><img src="' . $row['image'] . '" width="20%"></center></a><br><br>';
+                            echo '<a href="./word.php?id=' . $row['id'] . '">' . ucfirst($row['spanish']) . '</a><br><br>';
                         }
                         ?>
                     </p>
@@ -79,18 +77,18 @@ $db->query($newVC);
                 </section>
             </div>
 
-<!--            <div class="padder">
+            <div class="padder">
                 <section id="link">
                     <a class="bottom-link" href="vocabulary-form.php">Click here to add a word to the vocabulary list.</a>
                 </section>
             </div>
         </div>
-        <div class="padder">-->
+        <div class="padder">
             <footer>
                 <p>
                 <span id="copyright">&COPY;JdaVet Web Designs | </span>
-<!--                <a href="../index.html">Home</a> |
-                <a id="assignments" href="../assignments.html">CS 313 Assignments</a></p>-->
+                <a href="../index.html">Home</a> |
+                <a id="assignments" href="../assignments.html">CS 313 Assignments</a></p>
             </footer>
         </div>
         <script type="text/javascript" src="../javascript.js"></script>
